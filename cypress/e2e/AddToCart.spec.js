@@ -13,18 +13,16 @@
             })
             cy.get('.schema-product__group')
                 .find('.js-product-title-link').first().click()
-            cy.get('.offers-description__price_secondary').then(firstPrice => {
-               cy.wrap(firstPrice).invoke('text')
-                })
-                .as('MarketPrice')                
+            cy.get('.offers-description__price_secondary').invoke('text').as('MarketPrice')
             cy.contains('В корзину').click()
             cy.contains ('Перейти в корзину').click()
-            cy.get('.cart-form__description_condensed-another').find( 'span').then( secondPrice => {
-               cy.wrap(secondPrice).invoke('text')
-                 })
-                    .as('PriceInCart') 
-            cy.get('@PriceInCart').should('have.value', '@PriceInMarket')
-                
+            cy.get('.cart-form__description_condensed-another').find( 'span').invoke('text').as('CartPrice')
+            cy.get('@MarketPrice').then((MarketPrice) => {
+                cy.get('@CartPrice').then((CartPrice) => {
+                    expect(CartPrice).to.eq(MarketPrice)
+                })
+            })
+           
                              
         })
 
