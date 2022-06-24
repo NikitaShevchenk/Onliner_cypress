@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-24T08:10:30.768Z",
+    "end": "2022-06-24T08:11:09.877Z",
+    "duration": 39109,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2ca40366-b589-4cfb-be1b-9727943aec6a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PageObjectTests\\cartManagement.spec.js",
+      "file": "cypress\\e2e\\PageObjectTests\\cartManagement.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d0ba496a-b142-4d23-b97a-853ba46bb162",
+          "title": "POM addToCart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "quantityChange",
+              "fullTitle": "POM addToCart quantityChange",
+              "timedOut": null,
+              "duration": 38909,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CartPage.cartManagement.getProductQuantity();\n_CartPage.cartManagement.clickPlusQuantity();\n_CartPage.cartManagement.getPlusQuantity();\n_CartPage.cartManagement.clickMinusQuantity();\n_CartPage.cartManagement.getMinusQuantity();\ncy.get('@initialQuantity').then(initialQuantity => {\n  cy.get('@plusQuantity').then(plusQuantity => {\n    expect(plusQuantity.trim()).to.not.eq(initialQuantity.trim());\n  });\n});\ncy.get('@initialQuantity').then(initialQuantity => {\n  cy.get('@minusQuantity').then(minusQuantity => {\n    expect(minusQuantity.trim()).to.eq(initialQuantity.trim());\n  });\n});",
+              "err": {},
+              "uuid": "9fd0bdf7-3b9e-4610-8f43-59dacd22ffcd",
+              "parentUUID": "d0ba496a-b142-4d23-b97a-853ba46bb162",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9fd0bdf7-3b9e-4610-8f43-59dacd22ffcd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 38909,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

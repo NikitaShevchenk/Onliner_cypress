@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-24T08:10:00.886Z",
+    "end": "2022-06-24T08:10:25.574Z",
+    "duration": 24688,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d394456b-7b90-4a9b-9dae-99053912786f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PageObjectTests\\addToCart.spec.js",
+      "file": "cypress\\e2e\\PageObjectTests\\addToCart.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "91f34a25-f873-4191-ac9c-b36db89af5e2",
+          "title": "POM addToCart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "AddToCart",
+              "fullTitle": "POM addToCart AddToCart",
+              "timedOut": null,
+              "duration": 24553,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_CatalogPage.catalogNavigation.navigateToCatalog();\n_CatalogPage.catalogNavigation.navigateToSection();\n_CatalogPage.catalogNavigation.navigateToSubsection();\n_CatalogPage.catalogNavigation.navigateToProductList();\n_ProductListPage.productList.selectProduct();\n_ProductProfile.addToCart.getPrimoryOfferPrice();\n_ProductProfile.addToCart.putInCart();\n_ProductProfile.addToCart.navigateToCart();\ncy.get('.cart-form__offers-part_total').find('span').invoke('text').as('CartPrice');\ncy.get('.cart-form__offers-part_data').find('a').invoke('text').as('productNameInCart');\ncy.get('@productNameInCart').then(productNameInCart => {\n  cy.get('@productName').then(productName => {\n    expect(productName.trim()).to.eq(productNameInCart.trim());\n  });\n});\ncy.get('@MarketPrice').then(MarketPrice => {\n  cy.get('@CartPrice').then(CartPrice => {\n    expect(CartPrice.trim()).to.eq(MarketPrice.trim());\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: ' Перейти в корзину' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: ' Перейти в корзину' but never did.\n    at Object.navToCartButton (https://www.onliner.by/__cypress/tests?p=cypress\\e2e\\PageObjectTests\\addToCart.spec.js:260:33)\n    at productProfilePage.navigateToCart (https://www.onliner.by/__cypress/tests?p=cypress\\e2e\\PageObjectTests\\addToCart.spec.js:273:19)\n    at Context.eval (https://www.onliner.by/__cypress/tests?p=cypress\\e2e\\PageObjectTests\\addToCart.spec.js:124:31)",
+                "diff": null
+              },
+              "uuid": "cdbbe50a-9810-443c-bf9d-5cd558f3316a",
+              "parentUUID": "91f34a25-f873-4191-ac9c-b36db89af5e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cdbbe50a-9810-443c-bf9d-5cd558f3316a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 24553,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

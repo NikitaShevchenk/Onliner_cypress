@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-23T21:57:48.647Z",
+    "end": "2022-06-23T21:58:14.407Z",
+    "duration": 25760,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df91c82d-abcb-47b8-a7e1-2ebc8302be8f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PageObjectTests\\addToCart.spec.js",
+      "file": "cypress\\e2e\\PageObjectTests\\addToCart.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5215f31d-e423-4430-a458-4439ef7e444a",
+          "title": "POM addToCart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "AddToCart",
+              "fullTitle": "POM addToCart AddToCart",
+              "timedOut": null,
+              "duration": 25586,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CatalogPage.catalogNavigation.navigateToCatalog();\n_CatalogPage.catalogNavigation.navigateToSection();\n_CatalogPage.catalogNavigation.navigateToSubsection();\n_CatalogPage.catalogNavigation.navigateToProductList();\n_ProductListPage.productList.selectProduct();\n_ProductProfile.addToCart.getPrimoryOfferPrice();\n_ProductProfile.addToCart.putInCart();\n_ProductProfile.addToCart.navigateToCart();\ncy.get('.cart-form__offers-part_total').find('span').invoke('text').as('CartPrice');\ncy.get('.cart-form__offers-part_data').find('a').invoke('text').as('productNameInCart');\ncy.get('@productNameInCart').then(productNameInCart => {\n  cy.get('@productName').then(productName => {\n    expect(productName.trim()).to.eq(productNameInCart.trim());\n  });\n});\ncy.get('@MarketPrice').then(MarketPrice => {\n  cy.get('@CartPrice').then(CartPrice => {\n    expect(CartPrice.trim()).to.eq(MarketPrice.trim());\n  });\n});",
+              "err": {},
+              "uuid": "b952fc1a-d4d3-433b-962b-573de982fcfc",
+              "parentUUID": "5215f31d-e423-4430-a458-4439ef7e444a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b952fc1a-d4d3-433b-962b-573de982fcfc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25586,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-23T21:56:45.732Z",
+    "end": "2022-06-23T21:57:41.636Z",
+    "duration": 55904,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5ceb600e-dd43-4fca-b12f-676749fbf629",
+      "title": "",
+      "fullFile": "cypress\\e2e\\OnlinerTests\\CartManagement.spec.js",
+      "file": "cypress\\e2e\\OnlinerTests\\CartManagement.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1292658d-afae-4986-be24-5b517645af09",
+          "title": "Cart management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete from cart",
+              "fullTitle": "Cart management Delete from cart",
+              "timedOut": null,
+              "duration": 25395,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.cart-form__button_remove').click({\n  force: true\n});\ncy.contains('.cart-form__link', 'Закрыть').click();\ncy.get('.cart-message__title').should('have.text', '\\n        Ваша корзина пуста\\n      ');",
+              "err": {},
+              "uuid": "ebe2b4fb-112d-4624-9589-bf800bbd5122",
+              "parentUUID": "1292658d-afae-4986-be24-5b517645af09",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "productAmount",
+              "fullTitle": "Cart management productAmount",
+              "timedOut": null,
+              "duration": 30365,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.cart-form__offers-part_total').find('.cart-form__description_condensed-other').invoke('text').as('initialQuantity'); //.should('have.text', '\\n            1 товар на сумму:\\n          899,00 р.')\ncy.get('.cart-form__button_increment').click().wait(2000);\ncy.get('.cart-form__offers-part_total').find('.cart-form__description_condensed-other').invoke('text').as('plusQuantity');\ncy.get('@initialQuantity').then(initialQuantity => {\n  cy.get('@plusQuantity').then(plusQuantity => {\n    expect(plusQuantity.trim()).to.not.eq(initialQuantity.trim());\n  });\n});\ncy.get('.cart-form__button_decrement').click().wait(2000);\ncy.get('.cart-form__offers-part_total').find('.cart-form__description_condensed-other').invoke('text').as('minusQuantity');\ncy.get('@initialQuantity').then(initialQuantity => {\n  cy.get('@minusQuantity').then(minusQuantity => {\n    expect(minusQuantity.trim()).to.eq(initialQuantity.trim());\n  });\n});",
+              "err": {},
+              "uuid": "5cb725eb-5569-4c64-87b9-4416c2632fdd",
+              "parentUUID": "1292658d-afae-4986-be24-5b517645af09",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ebe2b4fb-112d-4624-9589-bf800bbd5122",
+            "5cb725eb-5569-4c64-87b9-4416c2632fdd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 55760,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
